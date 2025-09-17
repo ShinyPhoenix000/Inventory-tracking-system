@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { BarChart3, Loader2 } from 'lucide-react';
-import { formatCurrency } from '../lib/utils';
-import { supabase } from '../lib/supabase';
+import { formatCurrency, formatDate } from './lib/utils';
+import { supabase } from './lib/supabase';
 import {
   BarChart,
   Bar,
@@ -29,7 +29,7 @@ interface OrderStats {
 
 const COLORS = ['#60a5fa', '#34d399', '#fbbf24', '#f87171', '#a78bfa'];
 
-const Analytics: React.FC = () => {
+const Analytics: React.FC<{ products?: any[] }> = ({ products }) => {
   const [stats, setStats] = useState<OrderStats | null>(null);
   const [loading, setLoading] = useState(true);
 

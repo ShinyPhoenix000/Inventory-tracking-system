@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Bell, Search, User, LogOut, ChevronDown } from 'lucide-react';
 import { User as SupabaseUser } from '@supabase/supabase-js';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from './hooks/useAuth';
 
 interface NavbarProps {
   user: SupabaseUser;

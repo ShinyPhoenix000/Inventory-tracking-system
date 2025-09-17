@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from './ui/Card';
 import { Loader2, LineChart } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { supabase } from './lib/supabase';
 import {
   AreaChart,
   Area,

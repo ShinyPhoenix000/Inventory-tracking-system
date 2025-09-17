@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { Input } from './ui/Input';
 import { Button } from './ui/Button';
-import { useAuth } from '../hooks/useAuth';
-import { supabase } from '../lib/supabase';
+import { useAuth } from './hooks/useAuth';
+import { supabase } from './lib/supabase';
 import {
   LogOut,
   Settings as SettingsIcon,

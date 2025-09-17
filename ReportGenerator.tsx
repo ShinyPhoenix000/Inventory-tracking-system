@@ -3,16 +3,16 @@ import { FileText, Download, Calendar, BarChart3, Loader2 } from 'lucide-react';
 import { Button } from './ui/Button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/Select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/Card';
-import { useOrders } from '../hooks/useOrders';
-import { useAuth } from '../hooks/useAuth';
-import { formatCurrency, formatDate } from '../lib/utils';
+import { useOrders } from './hooks/useOrders';
+import { useAuth } from './hooks/useAuth';
+import { formatCurrency, formatDate } from './lib/utils';
 import * as XLSX from 'xlsx';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 const ReportGenerator: React.FC = () => {
   const { user } = useAuth();
-  const { orders, loading: ordersLoading } = useOrders(user?.id);
+  const { orders, loading: ordersLoading } = useOrders(user?.id ?? '');
   const [reportType, setReportType] = useState('');
   const [dateRange, setDateRange] = useState('');
   const [format, setFormat] = useState('pdf');

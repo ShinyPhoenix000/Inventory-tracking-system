@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { User } from '@supabase/supabase-js';
-import { useProducts } from '../hooks/useProducts';
+import { useProducts } from './hooks/useProducts';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import ProductForm from './ProductForm';

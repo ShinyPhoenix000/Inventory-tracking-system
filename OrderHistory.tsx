@@ -3,13 +3,13 @@ import { Calendar, Filter, ChevronLeft, ChevronRight, Download } from 'lucide-re
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/Card';
 import { Button } from './ui/Button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/Select';
-import { useOrders } from '../hooks/useOrders';
-import { formatCurrency, formatDate } from '../lib/utils';
-import { useAuth } from '../hooks/useAuth';
+import { useOrders } from './hooks/useOrders';
+import { formatCurrency, formatDate } from './lib/utils';
+import { useAuth } from './hooks/useAuth';
 
 const OrderHistory: React.FC = () => {
   const { user } = useAuth();
-  const { orders, loading, error } = useOrders(user?.id);
+  const { orders, loading, error } = useOrders(user?.id ?? '');
   const [currentPage, setCurrentPage] = useState(1);
   const [statusFilter, setStatusFilter] = useState('all');
   const [dateRange, setDateRange] = useState('all');

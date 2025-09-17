@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Lock, LogIn, UserPlus, AlertCircle } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from './hooks/useAuth';
 
-const Login: React.FC = () => {
+interface LoginProps {
+  setUser: (user: any) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ setUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSignUp, setIsSignUp] = useState(false);
@@ -16,12 +20,14 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const { error } = isSignUp 
+      const { error, user: loggedInUser } = isSignUp 
         ? await signUp(email, password)
         : await signIn(email, password);
 
       if (error) {
         setError(error.message);
+      } else if (loggedInUser) {
+        setUser(loggedInUser);
       } else if (isSignUp) {
         setError('Check your email for a confirmation link!');
       }
