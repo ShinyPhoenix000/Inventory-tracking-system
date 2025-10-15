@@ -2,6 +2,8 @@
 
 A comprehensive, production-ready inventory and order management system built with React, TypeScript, and Supabase.
 
+![Dashboard View](images/inventorymanagement.png)
+
 ## 🚀 Features
 
 ### 🔐 Authentication & Security
@@ -23,6 +25,9 @@ A comprehensive, production-ready inventory and order management system built wi
 - Order status management (completed, pending, cancelled)
 - Order filtering by date range and status
 - Pagination for large order lists
+
+![Analytics View](images/inventorymanagement1.png)
+
 
 ### 📊 Advanced Analytics
 - Summary cards with key metrics (total products, orders, low stock items)
